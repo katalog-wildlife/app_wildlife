@@ -326,7 +326,7 @@ class _MyFormPutState extends State<MyFormPut> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Form Input'),
+        title: Text('Form '),
       ),
       body: SingleChildScrollView(
         child: Container(

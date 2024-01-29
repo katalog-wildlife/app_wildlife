@@ -137,14 +137,18 @@ class _MyDasboardState extends State<MyDasboard> {
           ),
           IconButton(
             icon: Icon(Icons.delete),
-            onPressed: () async {
-              await apiService.deleteAnimal(animal.id);
-              _refresh();
-              // Tambahkan logika untuk menangani ketika pengguna mengetuk tombol hapus
+           onPressed: () async {
+              try {
+                await apiService.deleteAnimal(animal.id);
+                _refresh();
+              } catch (e) {
+                print('Error deleting animal: $e');
+                // Tambahkan logika penanganan kesalahan sesuai kebutuhan
+              }
             },
           ),
         ],
-      ),
+      ),  
     );
   }
 }
