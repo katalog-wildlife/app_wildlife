@@ -33,9 +33,12 @@ class _MyDasboardState extends State<MyDasboard> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: Color.fromARGB(255, 74, 44, 2),
           title: const Text('Dasboard'),
         ),
+        
+        backgroundColor:  Color.fromARGB(255, 240, 213, 145),
+        
         body: _buildBody(),
         floatingActionButton: FloatingActionButton(
           // Tambahkan floatingActionButton di sini

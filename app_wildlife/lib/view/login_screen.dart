@@ -50,14 +50,20 @@ class _LoginScreenState extends State<LoginScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text('Login'),
+          backgroundColor: Color.fromARGB(255, 74, 44, 2),
+        ),
+
+        backgroundColor: Color.fromARGB(255, 240, 213, 145),
+        
         body: SingleChildScrollView(
           // Tambahkan SingleChildScrollView di sini
           child: Column(
             children: [
               Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height / 3,
+                height: MediaQuery.of(context).size.height / 5,
                 child: Image.asset(
                   'lib/images/logo_wildlife.png',
                 ),
@@ -65,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 240, 213, 145),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),

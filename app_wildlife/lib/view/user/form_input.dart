@@ -308,6 +308,7 @@ class _MyFormInputState extends State<MyFormInput> {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Form Input'),
+        backgroundColor: Color.fromARGB(255, 74, 44, 2),
       ),
       body: SingleChildScrollView(
         child: Container(
