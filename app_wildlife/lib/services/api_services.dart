@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:app_wildlife/model/animal_model.dart';
 import 'package:app_wildlife/model/login_model.dart';
+import 'package:app_wildlife/model/register_model.dart';
 import 'package:app_wildlife/services/auth_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
@@ -51,6 +52,7 @@ class ApiServices {
     }
   }
 
+  
   Future<LoginResponse?> login(LoginInput login) async {
     try {
       final response = await dio.post(
@@ -202,6 +204,28 @@ class ApiServices {
     } catch (error) {
       print('Error in deleteAnimal: $error');
       throw error;
+    }
+  }
+
+  Future<RegisterResponse?> register(RegisterInput register) async {
+    try {
+      final response = await dio.post(
+        '$_baseUrl/wildlife-register',
+        data: register.toJson(),
+      );
+      print(response.data);
+      if (response.statusCode == 200) {
+        return RegisterResponse.fromJson(jsonDecode(response.data));
+      }
+      return null;
+    } on DioException catch (e) {
+      if (e.response != null && e.response!.statusCode != 200) {
+        debugPrint('Client error - the request cannot be fulfilled');
+        return RegisterResponse.fromJson(e.response!.data);
+      }
+      rethrow;
+    } catch (e) {
+      rethrow;
     }
   }
 }

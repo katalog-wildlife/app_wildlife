@@ -1,5 +1,6 @@
 import 'package:app_wildlife/view/bottomNavigationbar.dart';
 import 'package:app_wildlife/view/home_page.dart';
+import 'package:app_wildlife/view/register_screen.dart';
 import 'package:app_wildlife/view/screen/dashboard.dart';
 import 'package:app_wildlife/view/user/form_input.dart';
 import 'package:app_wildlife/view/login_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const DynamicBottomNavBar(),
+      home: const RegisterScreen(),
     );
   }
 }
